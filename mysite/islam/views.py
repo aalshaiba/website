@@ -4,5 +4,9 @@ from .prayers import get_prayers
 
 
 def index(request):
-
-    return HttpResponse(get_prayers())
+    names = []
+    times = []
+    for name, time in get_prayers():
+        times.append(time)
+        names.append(name)
+    return render(request, 'index.html', context={'prayers': get_prayers()})
