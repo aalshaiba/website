@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+  <table class="table">
+  <thead class="table-light">
+    <tr>
+      <th>NAME</th>
+      <th>TIME </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for prayer in prayers %}
+  <tr>
+      <td>{{prayer.0}}</td>
+      <td>{{prayer.1}}</td>
+  </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

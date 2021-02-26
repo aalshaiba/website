@@ -9,4 +9,4 @@ def index(request):
     for name, time in get_prayers():
         times.append(time)
         names.append(name)
-    return render(request, 'index.html', context={'prayers': get_prayers()})
+    return render(request, 'prayers.html', context={'prayers': get_prayers()})
