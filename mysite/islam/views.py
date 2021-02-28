@@ -1,11 +1,8 @@
-from django.shortcuts import render
-from .prayers import get_prayers
+from rest_framework.views import APIView, Response
+from .prayers import get_prayer
 
 
-def index(request):
-    names = []
-    times = []
-    for name, time in get_prayers():
-        times.append(time)
-        names.append(name)
-    return render(request, 'prayers.html', context={'prayers': get_prayers()})
+class PrayerView(APIView):
+
+    def get(self, request):
+        return Response(get_prayer())
