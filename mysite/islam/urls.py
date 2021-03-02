@@ -6,5 +6,5 @@ router = routers.DefaultRouter()
 
 urlpatterns = [
     path('', include('rest_framework.urls')),
-    path('prayers', PrayerView.as_view())
+    path('prayers/', PrayerView.as_view())
 ]
